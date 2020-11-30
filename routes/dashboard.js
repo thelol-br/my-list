@@ -7,4 +7,12 @@ const { isLogged } = require('../controllers/auth');
 // @route   GET /dashboard
 router.get('/', isLogged.ensureAuth, dashboardController.getDashboard);
 
+// @desc    Show add page
+// @route   GET /dashboard/add
+router.get('/add', isLogged.ensureAuth, dashboardController.getDashboardAdd);
+
+// @desc    Process add
+// @route   POST /dashboard/add
+router.post('/add', isLogged.ensureAuth, dashboardController.postDashboardAdd);
+
 module.exports = router;
