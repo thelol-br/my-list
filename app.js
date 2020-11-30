@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 const passport = require('passport');
+const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./config/db');
 
 // Load config
@@ -16,7 +18,12 @@ require('./config/passport')(passport);
 // Connect DB
 connectDB();
 
+// Init app as express instance
 const app = express();
+
+// Body parser
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Load Morgan logger
 if (process.env.NODE_ENV === 'development') {
@@ -31,7 +38,8 @@ app.set('view engine', '.hbs');
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
 // Passport middleware
