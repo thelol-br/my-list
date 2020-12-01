@@ -10,8 +10,9 @@
                     </div>
                     <div class="collapsible-body">
                         <span>{{body}}</span><br>
-                        <span>{{createdAt}}</span><br>
-                        <span>{{status}}</span>
+                        <span>Created at: {{formatDate createdAt 'Do MMMM YYYY'}}</span><br>
+                        <span>Status: {{status}}</span><br>
+                        {{> _del_edit_btn}}
                     </div>
                 </li>
             </ul>
@@ -33,8 +34,9 @@
                     </div>
                     <div class="collapsible-body">
                         <span>{{body}}</span><br>
-                        <span>{{createdAt}}</span><br>
-                        <span>{{status}}</span>
+                        <span>Created at: {{formatDate createdAt 'Do MMMM YYYY'}}</span><br>
+                        <span>Status: {{status}}</span><br>
+                        {{> _del_edit_btn}}
                     </div>
                 </li>
             </ul>
@@ -56,8 +58,9 @@
                     </div>
                     <div class="collapsible-body">
                         <span>{{body}}</span><br>
-                        <span>{{createdAt}}</span><br>
-                        <span>{{status}}</span>
+                        <span>Created at: {{formatDate createdAt 'Do MMMM YYYY'}}</span><br>
+                        <span>Status: {{status}}</span><br>
+                        {{> _del_edit_btn}}
                     </div>
                 </li>
             </ul>
