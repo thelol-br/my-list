@@ -16,3 +16,6 @@ Thanks to Brad Traversy <https://github.com/bradtraversy>
 1.3 GOOGLE_CLIENT_ID
 
 1.4 GOOGLE_CLIENT_SECRET
+
+## Heroku Deploy
+https://mylist-thelol.herokuapp.com
