@@ -4,7 +4,7 @@
             <h3 class="center-align">To do</h3>
             {{#each todos}}
             <ul class="collapsible popout">
-                <li>
+                <li data-id="{{_id}}">
                     <div class="collapsible-header hoverable">
                         <i class="material-icons">chevron_right</i>{{title}}
                     </div>
@@ -28,7 +28,7 @@
             <h3 class="center-align">Doing</h3>
             {{#each doing}}
             <ul class="collapsible popout">
-                <li>
+                <li data-id="{{_id}}">
                     <div class="collapsible-header hoverable">
                         <i class="material-icons">chevron_right</i>{{title}}
                     </div>
@@ -52,7 +52,7 @@
             <h3 class="center-align">Done</h3>
             {{#each done}}
             <ul class="collapsible popout">
-                <li>
+                <li data-id="{{_id}}">
                     <div class="collapsible-header hoverable">
                         <i class="material-icons">chevron_right</i>{{title}}
                     </div>
